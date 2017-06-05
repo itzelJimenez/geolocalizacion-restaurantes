@@ -31,13 +31,13 @@ var error = function(){
     alert("Lo sentimos, por el momento no podemos acceder a tu ubicación, intentalo más tarde.")
 }
 
-var restarantes = [
+var restaurantes = [
   {
     "nombre": "Mercado Roma",
     "ubicación": {lat:19.4154167,  lng: -99.1646039 }
   },
   {
-    "nombre": "Roseta",
+    "nombre": "Rosseta",
     "ubicación": {lat:19.4154167,  lng: -99.1646039 }
   },
   {
@@ -45,29 +45,41 @@ var restarantes = [
     "ubicación": {lat:19.4154167,  lng: -99.1646039 }
   },
   {
-    "nombre": "Mercado Roma",
+    "nombre": "El parnita",
     "ubicación": {lat:19.4154167,  lng: -99.1646039 }
   },
   {
-    "nombre": "Mercado Roma",
+    "nombre": "Mog Bistro",
     "ubicación": {lat:19.4154167,  lng: -99.1646039 }
   },
   {
-    "nombre": "Mercado Roma",
+    "nombre": "Maximo Bistrot",
     "ubicación": {lat:19.4154167,  lng: -99.1646039 }
   }
 ];
 
-var plantillaContacto = '<div class="well  well-lg page-header">' +
+var plantillaRestaurante = '<div class="well  well-lg page-header">' +
         '<div class="card-panel hoverable grey lighten-5 z-depth-1">' +
-          '<h4>**Nombre**</h4>' +
+          '<h4>**nombre**</h4>' +
             '<p>Puntuación:</p>' +
               '<button class="btn btn-primary btn-md ">Ver ubicación</button>' +
             '</div>' +
         '</div>';
   var filtrar = function (e) {
   e.preventDefault();
-  alert("hola");
+  var criterioBusqueda = $("#search").val().toLowerCase();
+  console.log(criterioBusqueda);
+  var restaurantesFiltrados = restaurantes.filter(function (restaurante) {
+    return restaurante.nombre.toLowerCase().indexOf(criterioBusqueda) >= 0;
+  });
+  mostrarRestaurantes(restaurantesFiltrados);
+};
+var mostrarRestaurantes = function (restaurantes) {
+  var plantillaFinal = "";
+  restaurantes.forEach(function (restaurante) {
+    plantillaFinal += plantillaRestaurante.replace("**nombre**", restaurante.nombre)
+  });
+  $("#lugaresComida").html(plantillaFinal);
 };
 
   $(document).ready(cargarPagina);
