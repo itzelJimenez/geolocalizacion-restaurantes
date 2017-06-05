@@ -8,12 +8,49 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="page-header">
-			  <h1>Encuentra tu restaurante <small>Fácil, rápido y seguro.</small></h1>
+			<div>
+				<div  class="col-sm-10 col-sm-offset-1 page-header">
+				  	<h1 class="text-center">Encuentra tu restaurante <small >Fácil, rápido y seguro.</small></h1>
+				</div>
+				<div class="col-sm-10 col-sm-offset-1">
+					<form role="search">
+				      <div class="form-group">
+				        <input type="text" class="form-control" placeholder="Buscar">
+				      </div>
+				    </form>
+				</div>
 			</div>
-			<div id="map">
-				
-			</div>
+			<section id="mapas" class="col-sm-offset-1 col-md-10 page-header">
+				<div id="map"></div>
+			</section>
+
+			<section id="lugaresComida" class="col-sm-offset-1 col-sm-10">
+					<div class="well  well-lg page-header">
+						<h4>Mercado Roma</h4>
+						<p>Puntuación:</p>
+						<button class="btn btn-primary btn-md ">Ver ubicación</button>
+					</div>
+					<div class="well  well-lg page-header">
+						<h4>Rosseta</h4>
+						<p>Puntuación:</p>
+						<button class="btn btn-primary btn-md ">Ver ubicación</button>
+					</div>
+					<div class="well  well-lg page-header">
+						<h4>Lalo!</h4>
+						<p>Puntuación:</p>
+						<button class="btn btn-primary btn-md ">Ver ubicación</button>
+					</div>
+					<div class="well  well-lg page-header">
+						<h4>Mercado Roma</h4>
+						<p>Puntuación:</p>
+						<button class="btn btn-primary btn-md ">Ver ubicación</button>
+					</div>
+					<div class="well  well-lg page-header">
+						<h4>Mercado Roma</h4>
+						<p>Puntuación:</p>
+						<button class="btn btn-primary btn-md ">Ver ubicación</button>
+					</div>						
+			</section>
 		</div>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqLTgaXdNU9LvxlLqrT5rQ2aN_UdHO2U&callback=initMap&libraries=places" type="text/javascript">
     </script>

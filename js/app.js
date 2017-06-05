@@ -31,19 +31,8 @@ var error = function(){
 }
 
 var restarantes =[
-  {
-      nombre: "Mercado Roma",
-      position: {lat: latitud, lng: longitud};
-  }
-  {
-      nombre: "Rosseta",
-      position: {lat: latitud, lng: longitud};
-  }
-  {
-      nombre:"Lalo!",
-      position: {lat: latitud, lng: longitud};
-  } 
-]
+ 
+];
 
   $(document).ready(cargarPagina);
 }) ();
