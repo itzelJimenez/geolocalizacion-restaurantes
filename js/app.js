@@ -1,11 +1,14 @@
 (function(){
   //Función que inicia todas las demás funciones
+var $botonBuscar=$('.buscar');
+var $mapaContenedor = $('#map');
+
 var cargarPagina = function(){
   initMap();
   $("#search-form").submit(filtrar);
+  $botonBuscar.click(function(){alert("hola");})
 }
 
-var $mapaContenedor = $('#map');
 var initMap = function(){
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(mostrarCoordenadas, error);
@@ -62,10 +65,10 @@ var plantillaRestaurante = '<div class="well  well-lg page-header">' +
         '<div class="card-panel hoverable grey lighten-5 z-depth-1">' +
           '<h4>**nombre**</h4>' +
             '<p>Puntuación:</p>' +
-              '<button class="btn btn-primary btn-md ">Ver ubicación</button>' +
+              '<button class="btn btn-primary btn-md buscar">Ver ubicación</button>' +
             '</div>' +
         '</div>';
-  var filtrar = function (e) {
+var filtrar = function (e) {
   e.preventDefault();
   var criterioBusqueda = $("#search").val().toLowerCase();
   console.log(criterioBusqueda);
@@ -74,6 +77,7 @@ var plantillaRestaurante = '<div class="well  well-lg page-header">' +
   });
   mostrarRestaurantes(restaurantesFiltrados);
 };
+
 var mostrarRestaurantes = function (restaurantes) {
   var plantillaFinal = "";
   restaurantes.forEach(function (restaurante) {
