@@ -33,8 +33,8 @@ function mostrarMapa(coordenadas){
 }
 
 function cambiarUbicacion(){
-	var latitud = $(this).data("latitud");
-	var longituf =  $(this).data("longitud");
+	var latitud = $(this).data("lat");
+	var longitud =  $(this).data("lng");
 	var coordenadas {
 		lat: latitud,
 		lng:longitud
