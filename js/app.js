@@ -37,27 +37,27 @@ var error = function(){
 var restaurantes = [
   {
     "nombre": "Mercado Roma",
-    "ubicación": {lat:19.4154167,  lng: -99.1646039 }
+    "ubicación": {lat:19.414062,  lng: -99.1664147 }
   },
   {
     "nombre": "Rosseta",
-    "ubicación": {lat:19.4154167,  lng: -99.1646039 }
+    "ubicación": {lat:19.419869,  lng: -99.1620097 }
   },
   {
     "nombre": "Lalo!",
-    "ubicación": {lat:19.4154167,  lng: -99.1646039 }
+    "ubicación": {lat:19.4154167,  lng: -99.1646039}
   },
   {
     "nombre": "El parnita",
-    "ubicación": {lat:19.4154167,  lng: -99.1646039 }
+    "ubicación": {lat:19.4140759,  lng: -99.1648121 }
   },
   {
     "nombre": "Mog Bistro",
-    "ubicación": {lat:19.4154167,  lng: -99.1646039 }
+    "ubicación": {lat:19.4161948,  lng: -99.1572155 }
   },
   {
     "nombre": "Maximo Bistrot",
-    "ubicación": {lat:19.4154167,  lng: -99.1646039 }
+    "ubicación": {lat:19.4152165,  lng: -99.164261 }
   }
 ];
 
