@@ -4,12 +4,12 @@ var $botonBuscar=$('.well');
 var $mapaContenedor = $('#map');
 
 var cargarPagina = function(){
-  initMap();
+  verificarGeolocation();
   $("#search-form").submit(filtrar);
   $(document).on("click", ".buscar", cambiarUbicacion)
 }
 
-var initMap = function(){
+var verificarGeolocation = function(){
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(mostrarPosiciónActual, error);
     } else{error()};
@@ -69,13 +69,16 @@ var restaurantes = [
   }
 ];
 
-var plantillaRestaurante = '<div class="well  well-lg page-header">' +
-        '<div class="card-panel hoverable grey lighten-5 z-depth-1">' +
-          '<h4>**nombre**</h4>' +
-            '<p>Puntuación:</p>' +
-              '<button class="btn btn-primary btn-md buscar" data-lat="**latitud**" data-lng="**longitud**">Ver ubicación</button>' +
-            '</div>' +
-        '</div>';
+var plantillaRestaurante = '<div class="well  well-lg col-sm-12">' + 
+                              '<div class="col-sm-4">'+ 
+                                  '<img src="imgs/restaurante.jpg">' + 
+                              '</div>' +
+                              '<div class="col-sm-7 col-sm-offset-1">'+
+                                  '<h3 class="title">**nombre**</h3>'+
+                                  '<p>Puntuación:</p>'+
+                                  '<button data-lat="**latitud**" data-lng="**longitud**" class="title-white btn btn-theme btn-md buscar">Ver ubicación</button>'+
+                              '</div>'+
+                            '</div>'
 
 var filtrar = function (e) {
   e.preventDefault();
@@ -95,7 +98,7 @@ var mostrarRestaurantes = function (restaurantes) {
   $("#lugaresComida").html(plantillaFinal);
 };
 
-function cambiarUbicacion(){
+var cambiarUbicacion = function(){
   var latitud = $(this).data("lat");
   var longitud =  $(this).data("lng");
   var coordenadas ={
@@ -107,5 +110,10 @@ function cambiarUbicacion(){
   mostrarMapa(coordenadas);
 }
 
-  $(document).ready(cargarPagina);
+var clear = function(){
+
+}
+
+
+$(document).ready(cargarPagina);
 }) ();
